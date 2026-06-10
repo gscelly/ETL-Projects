@@ -206,6 +206,7 @@ gontra-c-de-danami/
   ```
 
 ---
+##  Diagrama
 
 ```mermaid
 erDiagram
@@ -227,7 +228,7 @@ erDiagram
         int max_progreso_x
     }
     DIM_PLAYER_STATS {
-        string session_id PK FK
+        string session_id FK
         int saltos_totales
         int disparos_totales
         int enemigos_eliminados
