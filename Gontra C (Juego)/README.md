@@ -207,6 +207,39 @@ gontra-c-de-danami/
 
 ---
 
+```
+erDiagram
+    FACT_GAME_EVENTS {
+        string event_id PK
+        string session_id FK
+        string event_type "damage, powerup, death"
+        int in_game_time_ms
+        int pos_x
+        int pos_y
+        int event_value "ej. daño recibido o ID de arma"
+    }
+    DIM_SESSION {
+        string session_id PK
+        datetime fecha_inicio
+        float duracion_seg
+        string resultado "death / win"
+        int score_final
+        int max_progreso_x
+    }
+    DIM_PLAYER_STATS {
+        string session_id PK FK
+        int saltos_totales
+        int disparos_totales
+        int enemigos_eliminados
+    }
+
+    DIM_SESSION ||--o{ FACT_GAME_EVENTS : "tiene_eventos"
+    DIM_SESSION ||--|| DIM_PLAYER_STATS : "resumen"
+```
+
+
+---
+
 ## 📄 Licencia
 
 Este proyecto es de uso educativo y personal.
