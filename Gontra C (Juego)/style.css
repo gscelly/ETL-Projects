@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#game-container {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    border: 2px solid #333;
+}
+
+#ui-container {
+    display: flex;
+    justify-content: space-between;
+    width: 800px; /* Mismo ancho que el canvas */
+    margin-top: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.player-hud {
+    width: 40%;
+}
+
+.player-hud h3 {
+    margin: 0 0 5px 0;
+    color: #ffcc00;
+}
+
+.energy-bar-bg {
+    width: 100%;
+    height: 20px;
+    background-color: #444;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.energy-bar-fill {
+    height: 100%;
+    width: 100%;
+    background-color: #00ff00;
+    transition: width 0.2s ease-in-out;
+}
+
+#p1-energy { background-color: #00ff00; }
+#p2-energy { background-color: #0088ff; }
+
+.boss-hud {
+    width: 40%;
+    text-align: right;
+}
+
+.boss-hud h3 {
+    margin: 0 0 5px 0;
+    color: #ff0000;
+}
+
+.boss-fill { background-color: #ff00ff !important; }
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+.stats div {
+    background: rgba(0,0,0,0.5);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Modal CSS */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #222;
+    border: 3px solid #ffcc00;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.modal-content h2 { color: #ff0000; font-size: 2.5em; margin-top: 0; }
+.modal-content h3 { color: #ffcc00; }
+
+#score-display { font-size: 1.5em; margin-bottom: 20px; }
+
+input[type="text"] {
+    background: #111; color: #fff;
+    border: 1px solid #555; padding: 10px;
+    font-size: 1.2em; font-family: inherit;
+    text-align: center; text-transform: uppercase;
+    width: 200px; margin-bottom: 15px;
+}
+
+button {
+    background: #00ff00; color: #000;
+    border: none; padding: 10px 20px;
+    font-size: 1.2em; font-family: inherit;
+    cursor: pointer; font-weight: bold;
+    border-radius: 5px;
+}
+button:hover { background: #00cc00; }
+
+#high-score-list {
+    list-style: none; padding: 0; text-align: left;
+    max-height: 200px; overflow-y: auto;
+    margin-bottom: 20px; border: 1px solid #444; padding: 10px;
+}
+
+#high-score-list li {
+    display: flex; justify-content: space-between;
+    border-bottom: 1px solid #333; padding: 5px 0;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#download-csv-btn {
+    background: linear-gradient(135deg, #0088ff, #00ccff);
+    color: #fff;
+    font-size: 0.95em;
+    padding: 10px 16px;
+    border: 1px solid rgba(0, 200, 255, 0.4);
+    transition: all 0.2s ease;
+}
+
+#download-csv-btn:hover {
+    background: linear-gradient(135deg, #0066cc, #0099dd);
+    box-shadow: 0 0 12px rgba(0, 180, 255, 0.5);
+    transform: translateY(-1px);
+}

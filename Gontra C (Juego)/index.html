@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gontra C de Danami</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Cargar Phaser 3 desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+</head>
+<body>
+    <div id="game-container"></div>
+    <div id="ui-container">
+        <div class="player-hud">
+            <h3>P1</h3>
+            <div class="energy-bar-bg">
+                <div id="p1-energy" class="energy-bar-fill"></div>
+            </div>
+            <div class="stats">
+                <div class="score">Score: <span id="p1-score">0</span></div>
+                <div class="bombs">Bombas (B): <span id="p1-bombs">3</span></div>
+                <div class="weapons">Arma (Q): <span id="p1-weapon">Standard</span></div>
+            </div>
+        </div>
+        <div class="boss-hud" id="boss-hud" style="display:none;">
+            <h3>BOSS</h3>
+            <div class="energy-bar-bg">
+                <div id="boss-energy" class="energy-bar-fill boss-fill"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="game-over-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <h2 id="modal-title">GAME OVER</h2>
+            <div id="score-display">Tu Score: <span id="final-score">0</span></div>
+            
+            <div id="name-input-section">
+                <p>Ingresa tus iniciales (Máx 12):</p>
+                <input type="text" id="player-name" maxlength="12" placeholder="TUS INICIALES" autocomplete="off">
+                <button id="save-score-btn">Guardar Score</button>
+            </div>
+
+            <div id="leaderboard-section" style="display:none;">
+                <h3>HIGH SCORES</h3>
+                <ul id="high-score-list"></ul>
+                <div class="modal-buttons">
+                    <button id="restart-btn">Jugar de Nuevo</button>
+                    <button id="download-csv-btn" title="Descargar datos de todas las sesiones">📊 Descargar Analytics CSV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
