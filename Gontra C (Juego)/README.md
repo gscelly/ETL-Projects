@@ -207,7 +207,7 @@ gontra-c-de-danami/
 
 ---
 
-```
+````mermaid
 erDiagram
     FACT_GAME_EVENTS {
         string event_id PK
@@ -238,7 +238,7 @@ erDiagram
 ```
 
 
----
+````
 
 ## 📄 Licencia
 
